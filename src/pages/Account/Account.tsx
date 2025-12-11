@@ -10,7 +10,7 @@ const accountsData = [
     id: 1,
     type: "Auto",
     isPrimary: true,
-    bankName: "새마을 금고",
+    bankName: "새마을 금고11",
     accountNumber: "9002029482947",
     hasBalance: true,
     balance: "29,038,028원",
