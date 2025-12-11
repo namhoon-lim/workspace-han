@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { Login } from '../pages/Login/Login';
 import Home from '../pages/Home/Home';
 import PageList from '../pages/PageList';
-import { Account } from '../pages/Account/Account';
+import { Account } from '../pages/Account_001/Account_001';
 import { AccountMain2 } from '../pages/AccountMain2/AccountMain2';
 import { AccountManagement } from '../pages/AccountManagement/AccountManagement';
 import { AccountScreen } from '../pages/AccountScreen/AccountScreen';
