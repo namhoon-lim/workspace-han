@@ -1,0 +1,1227 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  /* Tailwind v4 spacing overrides */
+  --spacing-1-5: 1.5px;
+  --spacing-7: 7px;
+  --spacing-18: 18px;
+  --spacing-20: 20px;
+  --spacing-21: 21px;
+  --spacing-22: 22px;
+  --spacing-23: 23px;
+  --spacing-26: 26px;
+  --spacing-30: 30px;
+  --spacing-42: 42px;
+  --spacing-47: 47px;
+  --spacing-50: 50px;
+  --spacing-54: 54px;
+  --spacing-55: 55px;
+  --spacing-58: 58px;
+  --spacing-60: 60px;
+  --spacing-66: 66px;
+  --spacing-68: 68px;
+  --spacing-74: 74px;
+  --spacing-86: 86px;
+  --spacing-100: 100px;
+  --spacing-105: 105px;
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+
+    /* Font Variables */
+    --body-14-b-font-family: "Pretendard", Helvetica;
+    --body-14-b-font-size: 14px;
+    --body-14-b-font-style: normal;
+    --body-14-b-font-weight: 700;
+    --body-14-b-letter-spacing: -0.28px;
+    --body-14-b-line-height: 129.99999523162842%;
+    --body-14-r-font-family: "Pretendard", Helvetica;
+    --body-14-r-font-size: 14px;
+    --body-14-r-font-style: normal;
+    --body-14-r-font-weight: 400;
+    --body-14-r-letter-spacing: -0.28px;
+    --body-14-r-line-height: 129.99999523162842%;
+    --body-14-SB-font-family: "Pretendard", Helvetica;
+    --body-14-SB-font-size: 14px;
+    --body-14-SB-font-style: normal;
+    --body-14-SB-font-weight: 600;
+    --body-14-SB-letter-spacing: -0.28px;
+    --body-14-SB-line-height: 129.99999523162842%;
+    --body-16-r-font-family: "Pretendard", Helvetica;
+    --body-16-r-font-size: 16px;
+    --body-16-r-font-style: normal;
+    --body-16-r-font-weight: 400;
+    --body-16-r-letter-spacing: -0.32px;
+    --body-16-r-line-height: 129.99999523162842%;
+    --body-bold-font-family: "SF Pro Text", Helvetica;
+    --body-bold-font-size: 17px;
+    --body-bold-font-style: normal;
+    --body-bold-font-weight: 400;
+    --body-bold-letter-spacing: -0.40799999237060547px;
+    --body-bold-line-height: 22px;
+    --caption-title-13-b-font-family: "Pretendard", Helvetica;
+    --caption-title-13-b-font-size: 13px;
+    --caption-title-13-b-font-style: normal;
+    --caption-title-13-b-font-weight: 700;
+    --caption-title-13-b-letter-spacing: -0.26px;
+    --caption-title-13-b-line-height: 129.99999523162842%;
+    --caption-title-13-r-font-family: "Pretendard", Helvetica;
+    --caption-title-13-r-font-size: 13px;
+    --caption-title-13-r-font-style: normal;
+    --caption-title-13-r-font-weight: 400;
+    --caption-title-13-r-letter-spacing: -0.26px;
+    --caption-title-13-r-line-height: 129.99999523162842%;
+    --navigation-12-r-font-family: "Pretendard", Helvetica;
+    --navigation-12-r-font-size: 12px;
+    --navigation-12-r-font-style: normal;
+    --navigation-12-r-font-weight: 400;
+    --navigation-12-r-letter-spacing: -0.24px;
+    --navigation-12-r-line-height: 129.99999523162842%;
+    --navigation-12-SB-font-family: "Pretendard", Helvetica;
+    --navigation-12-SB-font-size: 12px;
+    --navigation-12-SB-font-style: normal;
+    --navigation-12-SB-font-weight: 600;
+    --navigation-12-SB-letter-spacing: -0.24px;
+    --navigation-12-SB-line-height: 129.99999523162842%;
+    --title-16-b-font-family: "Pretendard", Helvetica;
+    --title-16-b-font-size: 16px;
+    --title-16-b-font-style: normal;
+    --title-16-b-font-weight: 700;
+    --title-16-b-letter-spacing: -0.32px;
+    --title-16-b-line-height: 129.99999523162842%;
+    --title-18-b-font-family: "Pretendard", Helvetica;
+    --title-18-b-font-size: 18px;
+    --title-18-b-font-style: normal;
+    --title-18-b-font-weight: 700;
+    --title-18-b-letter-spacing: -0.36px;
+    --title-18-b-line-height: 129.99999523162842%;
+    --title-20-b-font-family: "Pretendard", Helvetica;
+    --title-20-b-font-size: 20px;
+    --title-20-b-font-style: normal;
+    --title-20-b-font-weight: 700;
+    --title-20-b-letter-spacing: -0.4px;
+    --title-20-b-line-height: 129.99999523162842%;
+    --title-24-b-font-family: "Pretendard", Helvetica;
+    --title-24-b-font-size: 24px;
+    --title-24-b-font-style: normal;
+    --title-24-b-font-weight: 700;
+    --title-24-b-letter-spacing: -0.48px;
+    --title-24-b-line-height: 129.99999523162842%;
+    --variable-collection-basic-black: rgba(0, 0, 0, 1);
+    --variable-collection-basic-white: rgba(255, 255, 255, 1);
+    --variable-collection-BG-03-f4f7fd: rgba(244, 247, 253, 1);
+    --variable-collection-BG-09-dfe3ec: rgba(223, 227, 236, 1);
+    --variable-collection-blue-01-0d1458: rgba(13, 20, 88, 1);
+    --variable-collection-blue-02-3182f6: rgba(49, 130, 246, 1);
+    --variable-collection-blue-03-1b64da: rgba(27, 100, 218, 1);
+    --variable-collection-error-color-red: rgba(242, 0, 0, 1);
+    --variable-collection-grayscale-01-0b0c0e: rgba(11, 12, 14, 1);
+    --variable-collection-grayscale-02-1c253f: rgba(28, 37, 63, 1);
+    --variable-collection-grayscale-03-5e616b: rgba(94, 97, 107, 1);
+    --variable-collection-grayscale-04-3a3f47: rgba(58, 63, 71, 1);
+    --variable-collection-grayscale-05-717682: rgba(113, 118, 130, 1);
+    --variable-collection-grayscale-08-6e7781: rgba(110, 119, 129, 1);
+    --variable-collection-grayscale-06-85888e: rgba(133, 136, 142, 1);
+    --variable-collection-grayscale-07-a3a8bf: rgba(163, 168, 191, 1);
+    --variable-collection-grayscale-10-d3d6e2: rgba(211, 214, 226, 1);
+    --variable-collection-primary-primary-0d56e4: rgba(13, 86, 228, 1);
+    --variable-collection-sub-title01-003fbb: rgba(0, 63, 187, 1);
+
+    /* Animation */
+    --animate-spin: spin 1s linear infinite;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @apply border-border;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+
+  /* 폰트 유틸리티 클래스 - Favorite.tsx에서 반복 사용되는 패턴 */
+  .text-body-bold-style {
+    font-family: var(--body-bold-font-family);
+    font-weight: var(--body-bold-font-weight);
+    font-size: var(--body-bold-font-size);
+    font-style: var(--body-bold-font-style);
+    letter-spacing: var(--body-bold-letter-spacing);
+    line-height: var(--body-bold-line-height);
+  }
+
+  .text-body-16-r-style {
+    font-family: var(--body-16-r-font-family);
+    font-weight: var(--body-16-r-font-weight);
+    font-size: var(--body-16-r-font-size);
+    font-style: var(--body-16-r-font-style);
+    letter-spacing: var(--body-16-r-letter-spacing);
+    line-height: var(--body-16-r-line-height);
+  }
+
+  .text-title-24-b-style {
+    font-family: var(--title-24-b-font-family);
+    font-weight: var(--title-24-b-font-weight);
+    font-size: var(--title-24-b-font-size);
+    font-style: var(--title-24-b-font-style);
+    letter-spacing: var(--title-24-b-letter-spacing);
+    line-height: var(--title-24-b-line-height);
+  }
+
+  .text-title-16-b-style {
+    font-family: var(--title-16-b-font-family);
+    font-weight: var(--title-16-b-font-weight);
+    font-size: var(--title-16-b-font-size);
+    font-style: var(--title-16-b-font-style);
+    letter-spacing: var(--title-16-b-letter-spacing);
+    line-height: var(--title-16-b-line-height);
+  }
+
+  .text-body-14-SB-style {
+    font-family: var(--body-14-SB-font-family);
+    font-weight: var(--body-14-SB-font-weight);
+    font-size: var(--body-14-SB-font-size);
+    font-style: var(--body-14-SB-font-style);
+    letter-spacing: var(--body-14-SB-letter-spacing);
+    line-height: var(--body-14-SB-line-height);
+  }
+
+  .text-caption-13-r-style {
+    font-family: var(--caption-title-13-r-font-family);
+    font-weight: var(--caption-title-13-r-font-weight);
+    font-size: var(--caption-title-13-r-font-size);
+    font-style: var(--caption-title-13-r-font-style);
+    letter-spacing: var(--caption-title-13-r-letter-spacing);
+    line-height: var(--caption-title-13-r-line-height);
+  }
+
+  .text-navigation-12-r-style {
+    font-family: var(--navigation-12-r-font-family);
+    font-weight: var(--navigation-12-r-font-weight);
+    font-size: var(--navigation-12-r-font-size);
+    font-style: var(--navigation-12-r-font-style);
+    letter-spacing: var(--navigation-12-r-letter-spacing);
+    line-height: var(--navigation-12-r-line-height);
+  }
+
+  .text-navigation-12-SB-style {
+    font-family: var(--navigation-12-SB-font-family);
+    font-weight: var(--navigation-12-SB-font-weight);
+    font-size: var(--navigation-12-SB-font-size);
+    font-style: var(--navigation-12-SB-font-style);
+    letter-spacing: var(--navigation-12-SB-letter-spacing);
+    line-height: var(--navigation-12-SB-line-height);
+  }
+
+  /* Transform 페이지 추가 폰트 유틸리티 */
+  .text-body-14-r-style {
+    font-family: var(--body-14-r-font-family);
+    font-weight: var(--body-14-r-font-weight);
+    font-size: var(--body-14-r-font-size);
+    font-style: var(--body-14-r-font-style);
+    letter-spacing: var(--body-14-r-letter-spacing);
+    line-height: var(--body-14-r-line-height);
+  }
+
+  .text-body-14-b-style {
+    font-family: var(--body-14-b-font-family);
+    font-weight: var(--body-14-b-font-weight);
+    font-size: var(--body-14-b-font-size);
+    font-style: var(--body-14-b-font-style);
+    letter-spacing: var(--body-14-b-letter-spacing);
+    line-height: var(--body-14-b-line-height);
+  }
+
+  .text-caption-13-b-style {
+    font-family: var(--caption-title-13-b-font-family);
+    font-weight: var(--caption-title-13-b-font-weight);
+    font-size: var(--caption-title-13-b-font-size);
+    font-style: var(--caption-title-13-b-font-style);
+    letter-spacing: var(--caption-title-13-b-letter-spacing);
+    line-height: var(--caption-title-13-b-line-height);
+  }
+
+  .text-title-18-b-style {
+    font-family: var(--title-18-b-font-family);
+    font-weight: var(--title-18-b-font-weight);
+    font-size: var(--title-18-b-font-size);
+    font-style: var(--title-18-b-font-style);
+    letter-spacing: var(--title-18-b-letter-spacing);
+    line-height: var(--title-18-b-line-height);
+  }
+
+  .text-title-20-b-style {
+    font-family: var(--title-20-b-font-family);
+    font-weight: var(--title-20-b-font-weight);
+    font-size: var(--title-20-b-font-size);
+    font-style: var(--title-20-b-font-style);
+    letter-spacing: var(--title-20-b-letter-spacing);
+    line-height: var(--title-20-b-line-height);
+  }
+
+  /* 탭 스타일 - 기본 및 활성 상태 */
+  .tab-text {
+    font-family: var(--body-16-r-font-family);
+    font-weight: var(--body-16-r-font-weight);
+    font-size: var(--body-16-r-font-size);
+    font-style: var(--body-16-r-font-style);
+    letter-spacing: var(--body-16-r-letter-spacing);
+    line-height: var(--body-16-r-line-height);
+    color: var(--variable-collection-grayscale-07-a3a8bf);
+  }
+
+  .tab-trigger[data-state="active"] .tab-text {
+    font-family: var(--title-16-b-font-family);
+    font-weight: var(--title-16-b-font-weight);
+    font-size: var(--title-16-b-font-size);
+    font-style: var(--title-16-b-font-style);
+    letter-spacing: var(--title-16-b-letter-spacing);
+    line-height: var(--title-16-b-line-height);
+    color: var(--variable-collection-sub-title01-003fbb);
+  }
+
+  /* 레이아웃 컨테이너 유틸리티 클래스 */
+  .favorite-screen {
+    min-height: 773px;
+    min-width: 375px;
+  }
+
+  .status-bar {
+    height: 47px;
+  }
+
+  .status-bar-content {
+    width: 333px;
+    height: 20px;
+  }
+
+  .status-time {
+    width: 54px;
+  }
+
+  .status-battery {
+    width: 27px;
+    height: 13px;
+  }
+
+  .status-wifi {
+    width: 17px;
+    height: 12px;
+  }
+
+  .status-signal {
+    width: 18px;
+    height: 12px;
+  }
+
+  .nav-header {
+    height: 54px;
+  }
+
+  .tab-text-width {
+    width: 136px;
+  }
+
+  .country-flag {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card-action-height {
+    height: 40px;
+  }
+
+  .card-action-row {
+    height: 29.69px;
+  }
+
+  .divider-line {
+    width: 1px;
+    height: 19.8px;
+  }
+
+  .footer-spacer {
+    width: 360px;
+    height: 16px;
+  }
+
+  .home-indicator-container {
+    width: 134px;
+  }
+
+  .home-indicator {
+    width: 134px;
+    height: 5px;
+  }
+
+  /* 스페이싱 유틸리티 클래스 */
+  .gap-22 {
+    gap: 22px;
+  }
+
+  .pt-22 {
+    padding-top: 22px;
+  }
+
+  .py-9 {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
+  .px-105 {
+    padding-left: 105px;
+    padding-right: 105px;
+  }
+
+  .mt-neg-1 {
+    margin-top: -1px;
+  }
+
+  .ml-neg-16 {
+    margin-left: -16.5px;
+  }
+
+  .mr-neg-16 {
+    margin-right: -16.5px;
+  }
+
+  .ml-neg-8 {
+    margin-left: -8.5px;
+  }
+
+  .mr-neg-8 {
+    margin-right: -8.5px;
+  }
+
+  /* 포지셔닝 유틸리티 클래스 */
+  .pos-center-y-10 {
+    top: calc(50% - 10px);
+  }
+
+  .pos-center-y-6 {
+    top: calc(50% - 6px);
+  }
+
+  .pos-center-y-5 {
+    top: calc(50% - 5px);
+  }
+
+  .pos-left-26 {
+    left: 26px;
+  }
+
+  .pos-top-19 {
+    top: 19px;
+  }
+
+  .pos-right-77 {
+    right: 77px;
+  }
+
+  /* 특수 유틸리티 클래스 */
+  .flex-none {
+    flex: 0 0 auto;
+  }
+
+  .rounded-full-100 {
+    border-radius: 100px;
+  }
+
+  .bg-cover-full {
+    background-size: 100% 100%;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .border-top-solid {
+    border-top-style: solid;
+  }
+
+  /* ========================================
+     Transform 페이지 전용 유틸리티 클래스
+     ======================================== */
+
+  /* Transform 배경색 */
+  .transform-bg {
+    background-color: #455cfa;
+  }
+
+  /* Transform 레이아웃 유틸리티 */
+  .transform-min-width {
+    min-width: 375px;
+  }
+
+  .transform-header-height {
+    height: 47px;
+  }
+
+  .transform-nav-height {
+    height: 54px;
+  }
+
+  .transform-input-height {
+    height: 50px;
+  }
+
+  .transform-heading-height {
+    height: 21px;
+  }
+
+  .transform-row-height {
+    height: 18px;
+  }
+
+  .transform-coupon-height {
+    height: 68px;
+  }
+
+  .transform-shadow-1 {
+    height: 23px;
+  }
+
+  .transform-status-content {
+    width: 333px;
+    height: 20px;
+  }
+
+  /* Transform 스페이싱 유틸리티 */
+  .gap-5px {
+    gap: 5px;
+  }
+
+  .gap-3px {
+    gap: 3px;
+  }
+
+  .gap-13px {
+    gap: 13px;
+  }
+
+  .gap-8-91 {
+    gap: 8px 91px;
+  }
+
+  /* Transform 포지셔닝 유틸리티 */
+  .pos-center-y-1 {
+    top: calc(50% - 1px);
+  }
+
+  .pos-center-x-2 {
+    left: calc(50% - 2px);
+  }
+
+  .pos-center-y-15 {
+    top: calc(50% - 15px);
+  }
+
+  .pos-top-11 {
+    top: 11px;
+  }
+
+  .pos-right-23 {
+    right: 23px;
+  }
+
+  /* Transform 특수 유틸리티 */
+  .rounded-bottom-16 {
+    border-radius: 0px 0px 16px 16px;
+  }
+
+  .shadow-card-sm {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-card {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .py-7px {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .py-15 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .bg-white-50 {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .rounded-pill {
+    border-radius: 20px;
+  }
+
+  .rounded-full-100px {
+    border-radius: 100px;
+  }
+
+  /* Transform 추가 유틸리티 */
+  .h-calc-full-minus-22 {
+    height: calc(100% - 22px);
+  }
+
+  .px-8-5 {
+    padding-left: 8.5px;
+    padding-right: 8.5px;
+  }
+
+  .h-16px {
+    height: 16px;
+  }
+
+  /* Transform 높이 유틸리티 */
+  .h-47 {
+    height: 47px;
+  }
+
+  .h-54 {
+    height: 54px;
+  }
+
+  .h-50 {
+    height: 50px;
+  }
+
+  .h-21 {
+    height: 21px;
+  }
+
+  .h-18 {
+    height: 18px;
+  }
+
+  .h-68 {
+    height: 68px;
+  }
+
+  .h-23 {
+    height: 23px;
+  }
+
+  /* Transform 추가 포지셔닝 유틸리티 */
+  .pos-left-26 {
+    left: 26px;
+  }
+
+  .pos-top-19 {
+    top: 19px;
+  }
+
+  .pos-right-77 {
+    right: 77px;
+  }
+
+  /* SVG 아이콘 레이어 포지셔닝 유틸리티 */
+  /* 복합 SVG 아이콘 내부 요소들의 위치 지정 */
+
+  .svg-layer-accent-1 {
+    width: 0;
+    height: 13.97%;
+    top: 63.41%;
+    left: 70.54%;
+  }
+
+  .svg-layer-main-shape {
+    width: 57.50%;
+    height: 40.00%;
+    top: 30.00%;
+    left: 22.50%;
+  }
+
+  .svg-layer-accent-2 {
+    width: 0;
+    height: 14.00%;
+    top: 62.92%;
+    left: 69.80%;
+  }
+
+  .svg-layer-subtract {
+    width: 70.00%;
+    height: 54.43%;
+    top: 22.50%;
+    left: 15.00%;
+  }
+
+  .svg-layer-center-square {
+    width: 33.59%;
+    height: 33.59%;
+    top: 32.92%;
+    left: 33.20%;
+  }
+
+  .svg-layer-center-rect {
+    width: 25.19%;
+    height: 33.59%;
+    top: 40.40%;
+    left: 33.20%;
+  }
+
+  .svg-layer-inner-shape {
+    width: 58.23%;
+    height: 38.82%;
+    top: 29.14%;
+    left: 22.64%;
+  }
+
+  /* Transform 페이지 추가 너비 유틸리티 */
+  .w-clock-time {
+    width: 54px;
+  }
+
+  .w-mini-logo {
+    width: 87px;
+  }
+
+  .w-coupon-label {
+    width: 63px;
+  }
+
+  /* Transform 페이지 국기 아이콘 배경 유틸리티 */
+  .flag-icon-bg {
+    background-image: url(/img/vector-5.svg);
+    background-size: 100% 100%;
+  }
+
+  /* ========================================
+     공통 페이지 중앙화 유틸리티 클래스
+     ======================================== */
+
+  /* 텍스트 색상 유틸리티 */
+  .text-grayscale-01 {
+    color: var(--variable-collection-grayscale-01-0b0c0e);
+  }
+
+  .text-grayscale-02 {
+    color: var(--variable-collection-grayscale-02-1c253f);
+  }
+
+  .text-grayscale-03 {
+    color: var(--variable-collection-grayscale-03-5e616b);
+  }
+
+  .text-grayscale-05 {
+    color: var(--variable-collection-grayscale-05-717682);
+  }
+
+  .text-grayscale-06 {
+    color: var(--variable-collection-grayscale-06-85888e);
+  }
+
+  .text-grayscale-07 {
+    color: var(--variable-collection-grayscale-07-a3a8bf);
+  }
+
+  .text-primary {
+    color: var(--variable-collection-primary-primary-0d56e4);
+  }
+
+  .text-sub-title01 {
+    color: var(--variable-collection-sub-title01-003fbb);
+  }
+
+  .text-blue-01 {
+    color: var(--variable-collection-blue-01-0d1458);
+  }
+
+  .text-error-red {
+    color: var(--variable-collection-error-color-red);
+  }
+
+  .text-placeholder {
+    color: #acb2c1;
+  }
+
+  .text-promo-blue {
+    color: #1b3bab;
+  }
+
+  /* 배경색 유틸리티 */
+  .bg-primary {
+    background-color: var(--variable-collection-primary-primary-0d56e4);
+  }
+
+  .bg-primary-hover:hover {
+    background-color: rgba(13, 86, 228, 0.9);
+  }
+
+  .bg-grayscale-bg-09 {
+    background-color: var(--variable-collection-BG-09-dfe3ec);
+  }
+
+  .bg-grayscale-bg-03 {
+    background-color: var(--variable-collection-BG-03-f4f7fd);
+  }
+
+  .bg-light-gray {
+    background-color: #f7f7f8;
+  }
+
+  .bg-warning-light {
+    background-color: #fff6f8;
+  }
+
+  .bg-inactive-btn {
+    background-color: #afb4ca;
+  }
+
+  .bg-bright-blue {
+    background-color: #45a6ff;
+  }
+
+  .bg-indicator-active {
+    background-color: rgba(127, 141, 192, 0.8);
+  }
+
+  .bg-indicator-inactive {
+    background-color: #d9d9d9;
+  }
+
+  .bg-grayscale-03 {
+    background-color: var(--variable-collection-grayscale-03-5e616b);
+  }
+
+  .bg-overlay-dark {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  }
+
+  /* 테두리 색상 유틸리티 */
+  .border-primary {
+    border-color: var(--variable-collection-primary-primary-0d56e4);
+  }
+
+  .border-error-red {
+    border-color: var(--variable-collection-error-color-red);
+  }
+
+  .border-light-blue {
+    border-color: #b7ccf7;
+  }
+
+  /* 스페이싱 유틸리티 - 추가 */
+  .pt-22 {
+    padding-top: 22px;
+  }
+
+  .pt-42 {
+    padding-top: 42px;
+  }
+
+  .pb-22 {
+    padding-bottom: 22px;
+  }
+
+  .px-22 {
+    padding-left: 22px;
+  }
+
+  .px-26 {
+    padding-left: 26px;
+  }
+
+  .gap-30 {
+    gap: 30px;
+  }
+
+  .gap-7 {
+    gap: 7px;
+  }
+
+  .gap-8-33 {
+    gap: 8.33px;
+  }
+
+  .gap-20 {
+    gap: 20px;
+  }
+
+  /* 높이/너비 유틸리티 - 추가 */
+  .h-42 {
+    height: 42px;
+  }
+
+  .min-h-42 {
+    min-height: 42px;
+  }
+
+  .min-h-54 {
+    min-height: 54px;
+  }
+
+  .h-58 {
+    height: 58px;
+  }
+
+  .h-55 {
+    height: 55px;
+  }
+
+  .h-74 {
+    height: 74px;
+  }
+
+  .min-h-74 {
+    min-height: 74px;
+  }
+
+  .w-30 {
+    width: 30px;
+  }
+  .h-7{
+    height:28px;
+  }
+  .h-30 {
+    height: 30px;
+  }
+
+  .w-60 {
+    width: 60px;
+  }
+
+  .h-60 {
+    height: 60px;
+  }
+
+  .w-7{
+    width: 28px;
+  }
+  .w-58 {
+    width: 58px;
+  }
+
+  .w-66 {
+    width: 66px;
+  }
+
+  .w-86 {
+    width: 86px;
+  }
+
+  .w-100 {
+    width: 100px;
+  }
+
+  .w-1-5 {
+    width: 1.5px;
+  }
+
+  /* Rounded 유틸리티 - 추가 */
+  .rounded-22 {
+    border-radius: 22px;
+  }
+
+  .rounded-14 {
+    border-radius: 14px;
+  }
+
+  .rounded-50 {
+    border-radius: 50px;
+  }
+
+  .rounded-1000 {
+    border-radius: 1000px;
+  }
+
+  .rounded-83-33 {
+    border-radius: 83.33px;
+  }
+
+  .rounded-t-20 {
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  /* Shadow 유틸리티 - 추가 */
+  .shadow-popup {
+    box-shadow: 0px 10px 14px #5a5a5a29;
+  }
+
+  .shadow-card-lg {
+    box-shadow: 0px 6px 20px 4px #b4bfe745;
+  }
+
+  .shadow-card-xs {
+    box-shadow: 0px 4px 8px #63649e14;
+  }
+
+  /* 폰트 유틸리티 - 추가 */
+  .text-body-15-r-style {
+    font-family: var(--body-14-r-font-family);
+    font-weight: var(--body-14-r-font-weight);
+    font-size: 15px;
+    font-style: var(--body-14-r-font-style);
+    letter-spacing: -0.30px;
+    line-height: 130%;
+  }
+
+  .text-body-20-r-style {
+    font-family: var(--body-14-r-font-family);
+    font-weight: var(--body-14-r-font-weight);
+    font-size: 20px;
+    font-style: var(--body-14-r-font-style);
+    letter-spacing: -0.40px;
+    line-height: 130%;
+  }
+
+  /* 폰트 스타일 - 인라인에서 사용하던 패턴 중앙화 */
+  .font-pretendard-regular {
+    font-family: 'Pretendard-Regular', Helvetica;
+    font-weight: normal;
+  }
+
+  .text-13-regular {
+    font-size: 13px;
+    letter-spacing: -0.26px;
+    line-height: 16.9px;
+  }
+
+  .text-15-regular {
+    font-size: 15px;
+    letter-spacing: -0.30px;
+    line-height: 19.5px;
+  }
+
+  .text-14-regular {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+    line-height: 18.2px;
+  }
+
+  /* Carousel/Indicator 유틸리티 */
+  .carousel-indicator-active {
+    width: 20px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: rgba(127, 141, 192, 0.8);
+  }
+
+  .carousel-indicator-inactive {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: #d9d9d9;
+  }
+
+  /* ElementScreen 유틸리티 */
+  .max-w-432 {
+    max-width: 432px;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+  }
+
+  .animate-marquee {
+    animation: marquee var(--duration) infinite linear;
+  }
+
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration) linear infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 8s infinite;
+  }
+
+  .animate-spin {
+    animation: var(--animate-spin);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+

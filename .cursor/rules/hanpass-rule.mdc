@@ -1,0 +1,12 @@
+---
+alwaysApply: true
+---
+In components, use theme-based keywords such as `bg-primary`, `text-mutedD, `rounded-lg`, `p-md`.
+**Arbitrary-value classes like `w-[123px]` or `text-[#abc]` are strictly forbidden.**
+
+- Use spacing tokens: `p-md`, `gap-2`, `px-3`, `py-2` 
+- Use size tokens: `text-sm`, `text-md`, `text-lg`, `text-xl`, `text-2xl` 
+- Use radius tokens: `rounded-lg`, `rounded-xl`, `rounded-full` 
+- All components must follow the theme system consistently
+- typescript 기반으로 컴포넌트 생성
+- pages 폴더에서 index.ts는 삭제하고 경로 재설정
